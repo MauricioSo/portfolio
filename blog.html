@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <title>Mauricio Soto - Portofolio</title>
 </head>
 <body>
         <div class="wrapper">
+          <!--here start perfil-->
                 <div class="perfil">
                     <h2  class="title-perfil">Mauricio Soto</h1>
                     <img  class="img-perfil" src="" alt="">
@@ -22,15 +25,20 @@
 
 
                 </div>
-    <div id="swup" class="transition-fade content">
-            <nav class="navbar">
-                    <ul class="list">
-                      <li><a  class="list-el" href="/index.html">home</a></li>
-                      <li><a  class="list-el" href="/projects.html">projects</a></li>
-                      <li><a  class="list-el" href="/blog.html">blog</a></li>
+    <div id="swup" class="transition-fade content" >
+      <!--here start the navbar-->
+            <nav class="navbar" >
+                    <ul class="list" >
+                      <li><a  class="list-el" href="/portfolio/index.html">home</a></li>
+                      <li><a  class="list-el" href="/portfolio/projects.html">projects</a></li>
+                      <li><a  class="list-el" href="/portfolio/blog.html">blog</a></li>
                       
                     </ul>
             </nav>
+            <div class="burguer" id="burguer">
+                <i class="fa fa-bars hamburguer"></i>
+              </div>
+            <!--blog-->
             <div class="content-text">
             <h1 class="title-home">Blog</h1>
            <h2 class="subtitle-blog">About my journey</h2>
@@ -61,8 +69,18 @@
      </div>
    </div>
 </div>
-
+<!--div that wipe the web page-->
 <div class="transition-wipe overlay"></div>
-
+<script>const burguer = document.querySelector(".burguer");
+    const list = document.querySelector(".list"); 
+    
+    
+    burguer.addEventListener('click', () => {
+        list.classList.toggle("menu-active");
+        })
+    
+    list.addEventListener('click', () => {
+        list.classList.toggle("menu-active");
+    })</script>
 </body>
 </html>

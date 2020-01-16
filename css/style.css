@@ -25,7 +25,7 @@
   max-width: 320px;
   height: 100%;
   width: 33%;
-  background: #56AFC1;
+  background: #56afc1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -39,6 +39,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  z-index: 5;
 }
 
 .title-perfil {
@@ -56,7 +57,20 @@
   height: 100px;
 }
 
+/* burguer */
+.burguer {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  display: none;
+}
+
 /*content start here */
+.subtitle {
+  margin: 20px;
+}
+
 .content {
   background: white;
   width: 67vw;
@@ -101,7 +115,7 @@
   width: 100%;
   position: -webkit-sticky;
   position: sticky;
-  background: #EEE6D1;
+  background: #eee6d1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -125,6 +139,8 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
   list-style: none;
+  font-size: 17px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .list-el {
@@ -151,8 +167,9 @@ html.is-leaving .transition-wipe {
 }
 
 .transition-wipe {
-  -webkit-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 1;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
 }
@@ -165,11 +182,13 @@ html.is-animating .transition-wipe {
 html.is-leaving .transition-wipe {
   -webkit-transform-origin: right;
           transform-origin: right;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
 }
 
 .overlay {
   position: absolute;
-  background: #56AFC1;
+  background: #56afc1;
   width: 100%;
   height: 100%;
   top: 0;
@@ -180,9 +199,96 @@ html.is-leaving .transition-wipe {
           transform-origin: left;
 }
 
+/* project part */
+.project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 30vh;
+  margin: 10%;
+}
+
+.project img {
+  display: block;
+}
+
+.project p {
+  display: inline;
+}
+
+.column1-project {
+  width: 35%;
+  background: #246e89;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.column2-project {
+  width: 65%;
+  background: #bae7e0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.img-project {
+  width: 100px;
+  height: 100px;
+}
+
 /* responsiveness */
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
   /* this is for tablets appears the hamburguer icon */
+  .burguer {
+    display: inline;
+  }
+  .list {
+    position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    right: -100%;
+    top: 0;
+    overflow: hidden;
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    background: #eee6d1;
+    z-index: 10;
+  }
+  .menu-active {
+    /*class for the animated menu*/
+    right: 0px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -214,8 +320,8 @@ html.is-leaving .transition-wipe {
             transform: translateX(100px);
   }
   .transition-wipe {
-    -webkit-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
     -webkit-transform: scaleY(0);
             transform: scaleY(0);
   }
@@ -229,7 +335,7 @@ html.is-leaving .transition-wipe {
   }
   .overlay {
     position: absolute;
-    background: #56AFC1;
+    background: #56afc1;
     width: 100%;
     height: 100%;
     top: 0;

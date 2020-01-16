@@ -1,90 +1,99 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans|Open+Sans|PT+Serif&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans|Open+Sans|PT+Serif&display=swap");
 
 /*variables */
-$fontTitle: 'PT Serif', serif;
-$fontPrimary: 'Noto Sans', sans-serif;
-$fontSecondary: 'Open Sans', sans-serif;
-$colorPrimary: #56AFC1;
-$colorSecondary: #EEE6D1;
-$colorTerceary: #BAE7E0;
-$colorForth: #246E89;
+$fontTitle: "PT Serif", serif;
+$fontPrimary: "Noto Sans", sans-serif;
+$fontSecondary: "Open Sans", sans-serif;
+$colorPrimary: #56afc1;
+$colorSecondary: #eee6d1;
+$colorTerceary: #bae7e0;
+$colorForth: #246e89;
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 /* perfil start here */
 .wrapper {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   width: 100vw;
-  height: 100vh; 
-  position: fixed; 
+  height: 100vh;
+  position: fixed;
 }
 
 .perfil {
-  max-width: 320px; 
-  height: 100%; 
-  width: 33%; 
-  background: $colorPrimary; 
+  max-width: 320px;
+  height: 100%;
+  width: 33%;
+  background: $colorPrimary;
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  flex-direction: column; 
-
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 5;
 }
 
-.title-perfil{
+.title-perfil {
   margin: 5%;
   font-family: $fontTitle;
-
 }
 
 .text-perfil {
   margin: 10%;
-  font-family: $fontPrimary; 
+  font-family: $fontPrimary;
 }
 
 .img-perfil {
   width: 100px;
-  height: 100px; 
+  height: 100px;
+}
+/* burguer */
+.burguer {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  display: none;
 }
 
 /*content start here */
 
-
+.subtitle {
+  margin: 20px;
+}
 
 .content {
-  background: white; 
-  width: 67vw; 
-  overflow-y: scroll; 
-  width: 100%; 
+  background: white;
+  width: 67vw;
+  overflow-y: scroll;
+  width: 100%;
 }
 .parrafo {
   font-size: 40px;
 }
 
 .content-text {
-  text-align: center; 
+  text-align: center;
 }
 /*this for the home page*/
 
 .title-home {
   justify-content: center;
-  margin: 30px; 
+  margin: 30px;
   font-family: $fontTitle;
 }
 
 .text-home {
   text-align: justify;
-  margin: 30px; 
+  margin: 30px;
   font-family: $fontPrimary;
 }
 
 .subtitle-blog {
   justify-content: center;
-  margin: 30px; 
+  margin: 30px;
   font-family: $fontTitle;
 }
 /*navbar */
@@ -92,25 +101,26 @@ $colorForth: #246E89;
 .navbar {
   height: 10%;
   width: 100%;
-  position: sticky; 
-  background: $colorSecondary; 
-  display: flex; 
-  align-items: center; 
-  justify-content: flex-end; 
+  position: sticky;
+  background: $colorSecondary;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .list {
   width: 50%;
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   justify-content: space-around;
-  list-style: none; 
+  list-style: none;
+  font-size: 17px;
+  font-family: $fontSecondary;
 }
 
 .list-el {
   text-decoration: none;
   color: black;
-
 }
 
 /*animation for swup.css */
@@ -121,34 +131,32 @@ $colorForth: #246E89;
 
 html.is-animating .transition-fade {
   opacity: 0;
-  transform: translateY(-100px); 
+  transform: translateY(-100px);
 }
 
 html.is-leaving .transition-wipe {
-  transform: translateY(100px); 
+  transform: translateY(100px);
 }
 
 .transition-wipe {
- transition: .5s ease-in-out;
- 
- transform: scaleX(0); 
+  transition: 0.5s;
+  z-index: 1;
+  transform: scaleX(0);
 }
 
-html.is-animating .transition-wipe{
-  transform: scaleX(1); 
+html.is-animating .transition-wipe {
+  transform: scaleX(1);
 }
 
 html.is-leaving .transition-wipe {
+  transform-origin: right;
 
-transform-origin: right; 
-
-
+  transition-delay: 0.5s;
 }
-
 
 .overlay {
   position: absolute;
-  background: $colorPrimary; 
+  background: $colorPrimary;
   width: 100%;
   height: 100%;
   top: 0;
@@ -157,121 +165,124 @@ transform-origin: right;
   transform-origin: left;
 }
 
-/* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
-.icon-bar {
-  position: fixed;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+/* project part */
+
+.project {
+  display: flex;
+  flex-direction: row;
+  height: 30vh;
+  margin: 10%;
+
+  img {
+    display: block;
+  }
+  p {
+    display: inline;
+  }
 }
 
-/* Style the icon bar links */
-.icon-bar a {
-  display: block;
-  text-align: center;
-  padding: 16px;
-  transition: all 0.3s ease;
-  color: white;
-  font-size: 20px;
+.column1-project {
+  width: 35%;
+  background: $colorForth;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-/* Style the social media icons with color, if you want */
-.icon-bar a:hover {
-  background-color: #000;
+.column2-project {
+  width: 65%;
+  background: $colorTerceary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.facebook {
-  background: #3B5998;
-  color: white;
+.img-project {
+  width: 100px;
+  height: 100px;
 }
-
-.twitter {
-  background: #55ACEE;
-  color: white;
-}
-
-.google {
-  background: #dd4b39;
-  color: white;
-}
-
-.linkedin {
-  background: #007bb5;
-  color: white;
-}
-
-.youtube {
-  background: #bb0000;
-  color: white;
-}
-
 
 /* responsiveness */
 
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 800px) {
+  /* this is for tablets appears the hamburguer icon */
+  .burguer {
+    display: inline;
+  }
+  .list {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    right: -100%;
+    top: 0;
+    overflow: hidden;
+    transition: all 1s ease;
+    background: $colorSecondary;
+    z-index: 10;
+  }
 
- /* this is for tablets appears the hamburguer icon */
+  .menu-active {
+    /*class for the animated menu*/
 
+    right: 0px;
+  }
 }
 
-@media only screen and (max-width: 600px){
-
+@media only screen and (max-width: 600px) {
   /* this is for phones */
 
- .wrapper {
-   flex-direction: column; 
- }
+  .wrapper {
+    flex-direction: column;
+  }
 
- .perfil {
-   width: 100%; 
-   height: 50vh; 
-   max-width: 100vw; 
- }
+  .perfil {
+    width: 100%;
+    height: 50vh;
+    max-width: 100vw;
+  }
 
- /*animations for swup.css*/
+  /*animations for swup.css*/
 
- .transition-fade {
-  transition: 0.4s;
-  opacity: 1;
+  .transition-fade {
+    transition: 0.4s;
+    opacity: 1;
+  }
+
+  html.is-animating .transition-fade {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  html.is-leaving .transition-wipe {
+    transform: translateX(100px);
+  }
+
+  .transition-wipe {
+    transition: 0.5s ease-in-out;
+
+    transform: scaleY(0);
+  }
+
+  html.is-animating .transition-wipe {
+    transform: scaleY(1);
+  }
+
+  html.is-leaving .transition-wipe {
+    transform-origin: bottom;
+  }
+
+  .overlay {
+    position: absolute;
+    background: $colorPrimary;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
 }
-
-html.is-animating .transition-fade {
-  opacity: 0;
-  transform: translateX(-100px); 
-}
-
-html.is-leaving .transition-wipe {
-  transform: translateX(100px); 
-}
-
-.transition-wipe {
- transition: .5s ease-in-out;
- 
- transform: scaleY(0); 
-}
-
-html.is-animating .transition-wipe{
-  transform: scaleY(1); 
-}
-
-html.is-leaving .transition-wipe {
-
-transform-origin: bottom; 
-
-
-}
-
-
-.overlay {
-  position: absolute;
-  background: $colorPrimary; 
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  transform: scaleY(0);
-  transform-origin: top;
-}
- 
- }
